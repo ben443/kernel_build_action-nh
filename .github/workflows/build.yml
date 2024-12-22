@@ -30,7 +30,7 @@ jobs:
           nethunter: true
           anykernel3: true
           ccache: true
-          extra-cmd: llvm=true
+          extra-cmd: llvm=1
           lxc: true
           lxc-patch: true
 
