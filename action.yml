@@ -151,7 +151,7 @@ runs:
       uses: hendrikmuhs/ccache-action@v1.2
       with:
         key: ${{ inputs.config }}-0cb68f9cbcbb3de9c966cf66ed51471fbe51419e
-        max-size: 4G
+        max-size: 8G
 
     - name: Build Kernel
       shell: bash
@@ -409,7 +409,7 @@ runs:
 
          echo "::group:: Building Kernel with selected cross compiler"
          mkdir out -p -v
-         COMMAND="make -j$(nproc --all) ${{ inputs.config }} ARCH=${{ inputs.arch }} all ${{ inputs.extra-cmd }} O=out"
+         COMMAND="make -j8(nproc --all) ${{ inputs.config }} ARCH=${{ inputs.arch }} all ${{ inputs.extra-cmd }} O=out"
          if [ -d $HOME/clang ]; then
               COMMAND+=" PATH=$HOME/clang/bin:$PATH"
          fi
