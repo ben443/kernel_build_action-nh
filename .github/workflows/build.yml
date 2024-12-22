@@ -30,7 +30,6 @@ jobs:
           nethunter: true
           anykernel3: true
           ccache: true
-          nethunter-patch: true
           lxc: true
           lxc-patch: true
 
